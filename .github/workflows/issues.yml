@@ -1,0 +1,11 @@
+name: Issue Tracker
+on: issues
+jobs:
+  track-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log issue details
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Issue URL: ${{ github.event.issue.html_url }}"
